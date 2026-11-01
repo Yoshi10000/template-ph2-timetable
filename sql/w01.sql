@@ -11,7 +11,7 @@ room AS 教室
 
 FROM courses
 WHERE day = '1'
-ORDER BY period ASC
+ORDER BY period ASC;
 
 -- 区画2：必修科目（科目コードの順）
 SELECT 
@@ -19,7 +19,7 @@ SELECT
     credits AS 単位数
 FROM courses
 WHERE required = TRUE
-ORDER BY code ASC
+ORDER BY code ASC;
 
 -- 区画3：3限以降の2単位の授業（曜日→時限の順）
 SELECT 
