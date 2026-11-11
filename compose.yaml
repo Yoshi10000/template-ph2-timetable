@@ -17,6 +17,7 @@ services:
     build: ./docker/php
     volumes:
       - ./src:/var/www/html
+      - composer-vendor:/var/www/html/vendor
     depends_on:
       - db
 
@@ -37,3 +38,4 @@ services:
 
 volumes:
   db-data:
+  composer-vendor:

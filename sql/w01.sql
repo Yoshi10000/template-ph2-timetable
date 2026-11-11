@@ -11,11 +11,11 @@ room AS 教室
 
 FROM courses
 WHERE day = '1'
-ORDER BY period ASC;
+ORDER BY period ASC, code ASC;
 
 -- 区画2：必修科目（科目コードの順）
 SELECT 
-    code AS 科目コード,
+    name AS 授業名,
     credits AS 単位数
 FROM courses
 WHERE required = TRUE

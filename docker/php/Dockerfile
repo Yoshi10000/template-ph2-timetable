@@ -17,6 +17,10 @@ RUN apk add --no-cache shadow \
  && usermod -u 1000 www-data && groupmod -g 1000 www-data \
  && apk del shadow
 
+# Composer の依存関係は Windows の bind mount ではなく、名前付きボリュームに保存する。
+RUN mkdir -p /var/www/html/vendor \
+ && chown www-data:www-data /var/www/html/vendor
+
 ENV COMPOSER_HOME=/tmp/composer
 WORKDIR /var/www/html
 USER www-data
